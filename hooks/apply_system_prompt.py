@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Stop hook: fold accumulated system prompt suggestions into the live prompt.
 
-The adjudicator (process_project.py) queues ``(:SystemPromptSuggestion
+The memory extraction processor (process_project.py) queues ``(:SystemPromptSuggestion
 {status: 'candidate'})`` nodes but never touches the live ``(:SystemPrompt)``.
 This hook closes that loop on Stop, rate-limited so the prompt is not churned
 on every turn. A rebuild only runs when both gates pass:
